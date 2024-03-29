@@ -1,3 +1,4 @@
+import time
 import streamlit as st
 
 from streamlit_image_select import image_select
@@ -13,27 +14,20 @@ st.set_page_config(
     initial_sidebar_state='expanded'
 )
 
-# Banner
-
-st.image('assets/images/banner.png')
 st.markdown(
     """
     <style>
-    .banner {
-        background-color: #f0f2f6;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
+    body {
+        background-color: #ffffff !important;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# st.write(
-#     "<h1 class='banner'>🦀 Price predictor for houses and apartments in Belgium</h1>",
-#     unsafe_allow_html=True
-# )
+# Banner
+
+st.image('assets/images/banner.png')
 
 # Sidebar section
 
@@ -55,21 +49,23 @@ with st.sidebar:
 
 predicted_price = 0
 
-if 'house' in img:
-    predicted_price = predict(house_form(), property_type='house')
-    if predicted_price:
-        with st.container(border=True):
-            green_style = '<span style="color:green;">{:.2f}</span>'.format(predicted_price)
-            st.write(f"According to the data provided, the property is valued at: {green_style} euros",
-                     unsafe_allow_html=True)
-else:
-    predicted_price = predict(apartment_form(), property_type='apartment')
-    if predicted_price:
-        with st.container(border=True):
-            green_style = '<span style="color:green;">{:.2f}</span>'.format(predicted_price)
-            st.write(f"According to the data provided, the property is valued at: {green_style} euros",
-                     unsafe_allow_html=True)
+property_type = 'apartment'
 
+if 'house' in img:
+    property_type = 'house'
+    data = house_form()
+else:
+    data = apartment_form()
+
+predicted_price = predict(data=data, property_type=property_type)
+
+if predicted_price:
+    with st.container(border=True):
+        with st.spinner('Processing...'):
+            time.sleep(1)
+            green_style = '<span style="color:green;">{:.2f}</span>'.format(predicted_price)
+            st.write(f"According to the data provided, the property is valued at: {green_style} euros",
+                     unsafe_allow_html=True)
 
 # Footer section
 
