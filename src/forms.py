@@ -2,6 +2,32 @@ import streamlit as st
 
 
 def apartment_form():
+    """
+    Generates a form using Streamlit for collecting information related to an apartment.
+
+    Returns:
+    dict: A dictionary containing the collected information.
+        The dictionary contains the following keys:
+            - 'facades': Number of facades of the apartment.
+            - 'habitable_surface': Habitable surface area of the apartment in square meters.
+            - 'bedroom_count': Number of bedrooms in the apartment.
+            - 'bathroom_count': Number of bathrooms in the apartment.
+            - 'toilet_count': Number of toilets in the apartment.
+            - 'room_count': Total number of rooms in the apartment (sum of bedrooms, bathrooms, and toilets).
+            - 'kitchen_type': Type of kitchen in the apartment.
+            - 'furnished': Boolean indicating whether the apartment is furnished or not.
+            - 'terrace': Boolean indicating whether the apartment has a terrace or not.
+            - 'garden_exists': Boolean indicating whether the apartment has a garden or not.
+            - 'state_of_building': State of the building where the apartment is located.
+            - 'living_surface': Living surface area of the apartment in square meters.
+            - 'epc': Energy Performance Certificate (EPC) rating of the apartment.
+            - 'consumption_per_m2': Energy consumption per square meter of the apartment.
+            - 'province': Dictionary containing information about the province where the apartment is located.
+                The dictionary contains the following key:
+                    - 'name': Name of the province.
+            - 'terrace_surface': Surface area of the terrace in square meters.
+    """
+    st.write('Apartment information:')
     from_apartment = st.form("form apartment")
     col1, col2 = from_apartment.columns([0.5, 3], gap='small')
 
@@ -133,6 +159,32 @@ def apartment_form():
 
 
 def house_form():
+    """
+    Generates a form using Streamlit for collecting information related to a house.
+
+    Returns:
+    dict: A dictionary containing the collected information.
+        The dictionary contains the following keys:
+            - 'facades': Number of facades of the house.
+            - 'habitable_surface': Habitable surface area of the house in square meters.
+            - 'bedroom_count': Number of bedrooms in the house.
+            - 'bathroom_count': Number of bathrooms in the house.
+            - 'toilet_count': Number of toilets in the house.
+            - 'room_count': Total number of rooms in the house (sum of bedrooms, bathrooms, and toilets).
+            - 'kitchen_type': Type of kitchen in the house.
+            - 'furnished': Boolean indicating whether the house is furnished or not.
+            - 'terrace': Boolean indicating whether the house has a terrace or not.
+            - 'garden_exists': Boolean indicating whether the house has a garden or not.
+            - 'state_of_building': State of the building where the house is located.
+            - 'living_surface': Living surface area of the house in square meters.
+            - 'epc': Energy Performance Certificate (EPC) rating of the house.
+            - 'consumption_per_m2': Energy consumption per square meter of the house.
+            - 'province': Dictionary containing information about the province where the house is located.
+                The dictionary contains the following key:
+                    - 'name': Name of the province.
+            - 'land_surface': Land surface area of the house in square meters.
+    """
+    st.write('House information:')
     from_house = st.form("form house")
     col1, col2 = from_house.columns([0.5, 3], gap='small')
 
