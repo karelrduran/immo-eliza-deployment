@@ -30,14 +30,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.write(
-    "<h1 class='banner'>🦀 Price predictor for houses and apartments in Belgium</h1>",
-    unsafe_allow_html=True
-)
-
-# Title section
-# st.markdown("<h1 style='text-align: center; color: grey;'>🦀 Price predictor for houses and apartments in Belgium</h1>",
-#             unsafe_allow_html=True)
+# st.write(
+#     "<h1 class='banner'>🦀 Price predictor for houses and apartments in Belgium</h1>",
+#     unsafe_allow_html=True
+# )
 
 # Sidebar section
 

@@ -27,7 +27,10 @@ def apartment_form():
                     - 'name': Name of the province.
             - 'terrace_surface': Surface area of the terrace in square meters.
     """
-    st.write('Apartment information:')
+    st.write(
+        "<h3>🦀 Apartment information:</h3>",
+        unsafe_allow_html=True
+    )
     from_apartment = st.form("form apartment")
     col1, col2 = from_apartment.columns([0.5, 3], gap='small')
 
@@ -184,7 +187,10 @@ def house_form():
                     - 'name': Name of the province.
             - 'land_surface': Land surface area of the house in square meters.
     """
-    st.write('House information:')
+    st.write(
+        "<h3>🦀 House information:</h3>",
+        unsafe_allow_html=True
+    )
     from_house = st.form("form house")
     col1, col2 = from_house.columns([0.5, 3], gap='small')
 

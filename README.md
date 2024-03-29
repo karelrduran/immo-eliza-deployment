@@ -1,4 +1,4 @@
-<h1 align="center"> IMMO Eliza ML </h1>
+<h1 align="center"> IMMO Eliza Deployment </h1>
 <p align="center">
     <img src="assets/images/banner.png">
 </p>
